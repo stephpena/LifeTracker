@@ -1,21 +1,23 @@
 {
 "standard":{
+  "life_total":20,
   "deck_size":60,
-  "deck_type":"min",
+  "deck_type":0,
   "sideboard":15,
   "max_card_copies":4,
   "sets":[],
   "banned":[]},
 "modern":{
+  "life_total":20,
   "deck_size":60,
-  "deck_type":"min",
+  "deck_type":0,
   "sideboard":15,
   "max_card_copies":4,
   "sets":[],
   "banned":[]},
 "commander":{
   "deck_size":100,
-  "deck_type":"exact",
+  "deck_type":1,
   "max_card_copies":1,
   "sideboard":0,
   "banned":[],
@@ -24,7 +26,7 @@
   "commander_damage":20},
 "two-headed giant":{
   "deck_size":60,
-  "deck_type":"min",
+  "deck_type":0,
   "sideboard":15,
   "max_card_copies":4,
   "banned":[],
