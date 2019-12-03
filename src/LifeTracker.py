@@ -3,7 +3,7 @@ import src.constants
 
 class LifeTracker(object):
 
-    def __init__(self,format,players):
+    def __init__(self,format,players=2):
         with open(src.constants.format_file) as f:
             format_data = src.depends.json.load(f)
 
@@ -13,11 +13,14 @@ class LifeTracker(object):
         self.sideboard = int(format_data[format]['sideboard'])
         self.max_card_copies = int(format_data[format]['max_card_copies'])
         self.life_total = self.life_start
+        self.players = players
 
-    def get_life_total(self,reset=False):
+    def get_life_total(self,life_adjust=0,reset=False):
         if reset == True:
             self.life_total = self.life_start
         else:
-            x = int(input())
-            self.life_total += x
+            self.life_total += life_adjust
+
+        if self.life_total <= 0:
+            self.life_total = 0
         return self.life_total
