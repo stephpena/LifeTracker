@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>MTG Life Tracker</title>
+  <meta name="description" content="MTG Life Tracker">
+  <meta name="author" content="Galvanize DSI">
+
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='jquery.js') }}">
+    </script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='app.js') }}">
+    </script>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Life Tracker</h1>
+
+    <div class="row">
+        <p>Keep track of player life totals</p>
+        <p>Please select format & players below</p>
+    </div>
+
+    <div class="row">
+      <div class="form-inline">
+
+        <!-- <div class="form-group">
+          <label for="mtgformat">Format:</label>
+          <select class="form-control" id="mtgformat">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div> -->
+
+        <div class="form-group">
+          <p class="form-control-static">Format:</p>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="mtgformat"></input>
+        </div>
+
+        <div class="form-group">
+          <p class="form-control-static">Players:</p>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="b"></input>
+        </div>
+
+        <div class="form-group">
+          <p class="form-control-static">c:</p>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="c"></input>
+        </div>
+
+        <div class="form-group">
+          <button type="button" id="solve" class="btn-primary">Solve!</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+        <!-- The span has an id so that later we can fill in the solution
+             using js. -->
+        <p> The solution is: <span id="solution"></span> </p>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,31 +1,27 @@
+from __future__ import division
+from math import sqrt
 from flask import Flask, render_template, request, jsonify
-import pandas as pd
-import numpy as np
-import json
-import sys
-import requests
 app = Flask(__name__)
-
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
-
-
-@app.route('/main', methods=['POST'])
-def test():
     return render_template('main.html')
 
-@app.route('/test', methods=['POST','GET'])
-def answers():
-    # user_data = request.json
-    # a, b, c = user_data['a'], user_data['b'], user_data['c']
-    # root_1, root_2 = _solve_quadratic(a, b, c)
-    test_1 = 25
-    test_2 = 15
-    return jsonify({'test_1': test_1, 'test_2': test_2})
+
+@app.route('/solve', methods=['POST'])
+def solve():
+    user_data = request.json
+    a, b, c = user_data['mtgformat'], user_data['b'], user_data['c']
+    root_1, root_2 = _solve_quadratic(a, b, c)
+    return jsonify({'root_1': root_1, 'root_2': root_2})
+
+
+def _solve_quadratic(a, b, c):
+    disc = b*b - 4*a*c
+    root_1 = (-b + sqrt(disc))/(2*a)
+    root_2 = (-b - sqrt(disc))/(2*a)
+    return root_1, root_2
 
 
 if __name__ == '__main__':
-    port = 5000
-    app.run(port=port, threaded=True, debug=False)
+    app.run(host='0.0.0.0', threaded=True, debug=True)
