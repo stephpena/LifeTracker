@@ -1,8 +1,8 @@
 let get_input_coefficients = function() {
-    let a = $("input#mtgformat").val()
+    let a = $("#mtgformat option:selected").text()
     let b = $("input#b").val()
     let c = $("input#c").val()
-    return {'mtgformat': parseInt(a),
+    return {'mtgformat': a,
             'numplayers': parseInt(b),
             'c': parseInt(c)}
 };
@@ -20,7 +20,7 @@ let send_coefficient_json = function(coefficients) {
 };
 
 let display_solutions = function(solutions) {
-    $("span#solution").html(solutions.root_1 + " and " + solutions.root_2)
+    $("span#solution").html("Format: " + solutions.root_1 + " and Players: " + solutions.root_2)
 };
 
 

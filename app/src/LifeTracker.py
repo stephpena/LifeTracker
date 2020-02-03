@@ -1,5 +1,5 @@
-import app.src.depends as depends
-import app.src.constants as constants
+import src.depends as depends
+import src.constants as constants
 
 class LifeTracker(object):
 

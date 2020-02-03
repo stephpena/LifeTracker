@@ -12,7 +12,8 @@ def index():
 def solve():
     user_data = request.json
     a, b, c = user_data['mtgformat'], user_data['b'], user_data['c']
-    root_1, root_2 = _solve_quadratic(a, b, c)
+    root_1 = a
+    root_2 = b
     return jsonify({'root_1': root_1, 'root_2': root_2})
 
 
